@@ -37,10 +37,6 @@ export function SuccessCasesSection({ actions, onActionSelect }: SuccessCasesSec
             <p className="mt-3 text-sm leading-6 text-slate-500 sm:text-base">
               {action.summary}
             </p>
-            <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand)]">
-              Abrir narrativa en el agente
-              <span className="transition group-hover:translate-x-1">→</span>
-            </div>
           </button>
         ))}
       </div>
