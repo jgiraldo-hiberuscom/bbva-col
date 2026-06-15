@@ -1,0 +1,85 @@
+@import 'tailwindcss';
+
+:root {
+  --app-bg: #f5f6f8;
+  --brand: #163d9b;
+  --brand-strong: #102d73;
+  --brand-soft: rgba(22, 61, 155, 0.08);
+  --font-body: 'Aptos', 'Segoe UI Variable Text', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --font-heading: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+  color: #0f172a;
+  background: var(--app-bg);
+  font-family: var(--font-body);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background:
+      radial-gradient(circle at top left, rgba(22, 61, 155, 0.05), transparent 22%),
+      linear-gradient(180deg, #f7f8fb 0%, #f4f5f8 100%);
+    font-family: var(--font-body);
+  }
+
+  button,
+  input,
+  textarea {
+    font: inherit;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .deck-slide {
+    @apply relative scroll-mt-28;
+  }
+
+  .chat-row {
+    @apply flex items-end gap-3;
+  }
+
+  .chat-row-user {
+    @apply justify-end;
+  }
+
+  .chat-row-user .chat-avatar {
+    @apply order-2;
+  }
+
+  .chat-bubble {
+    @apply max-w-[86%] rounded-[24px] px-4 py-3 text-sm shadow-sm;
+  }
+
+  .chat-avatar {
+    @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-slate-200 bg-white text-[0.68rem] font-bold tracking-[0.18em] text-[var(--brand)] shadow-sm;
+  }
+
+  .chat-bubble-assistant {
+    @apply border border-slate-200 bg-white text-slate-700;
+  }
+
+  .chat-bubble-user {
+    @apply bg-[linear-gradient(145deg,_#163d9b,_#102d73)] text-white shadow-[0_12px_24px_rgba(22,61,155,0.22)];
+  }
+}
